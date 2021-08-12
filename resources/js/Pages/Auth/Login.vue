@@ -1,40 +1,54 @@
 <template>
     <Head title="Log in" />
 
-    <BreezeValidationErrors class="mb-4" />
+    <div class="flex flex-col items-center justify-center w-full">
+        <div class="flex flex-col items-center justify-center w-1/2 space-y-4">
 
-    <div v-if="status" class="mb-4 font-medium text-sm text-green-600">
-        {{ status }}
-    </div>
+            <h1 class="text-4xl font-bold text-center text-primary">Log In</h1>
 
-    <form @submit.prevent="submit">
-        <div>
-            <BreezeLabel for="email" value="Email" />
-            <BreezeInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
-        </div>
-
-        <div class="mt-4">
-            <BreezeLabel for="password" value="Password" />
-            <BreezeInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="current-password" />
-        </div>
-
-        <div class="block mt-4">
-            <label class="flex items-center">
-                <BreezeCheckbox name="remember" v-model:checked="form.remember" />
-                <span class="ml-2 text-sm text-gray-600">Remember me</span>
-            </label>
-        </div>
-
-        <div class="flex items-center justify-end mt-4">
-            <Link v-if="canResetPassword" :href="route('password.request')" class="underline text-sm text-gray-600 hover:text-gray-900">
-                Forgot your password?
+            <Link class="flex items-center justify-center w-1/2 px-6 py-2 space-x-6 text-sm font-semibold text-black shadow-xl bg-light rounded-2xl">
+                <img :src="$page.props.images.google" class="object-cover w-8 h-8" />
+                <span>Sign in with Google</span>
             </Link>
 
-            <BreezeButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Log in
-            </BreezeButton>
+            <span class="my-4 text-base font-bold lowercase">Or</span>
+
+            <BreezeValidationErrors class="mb-4" />
+
+            <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
+                {{ status }}
+            </div>
+
+            <form @submit.prevent="submit" class="flex flex-col w-1/2 space-y-4">
+                <div class="flex flex-col items-center justify-center">
+                    <BreezeLabel for="email" value="Email Address" />
+                    <BreezeInput id="email" type="text" class="block w-full mt-1" v-model="form.email" autofocus />
+                </div>
+
+                <div class="flex flex-col items-center justify-center">
+                    <BreezeLabel for="password" value="Password" />
+                    <BreezeInput id="password" type="password" class="block w-full mt-1" v-model="form.password" />
+                </div>
+
+                <div class="block mt-4">
+                    <label class="flex items-center">
+                        <BreezeCheckbox name="remember" v-model:checked="form.remember" />
+                        <span class="ml-2 text-sm text-gray-600">Remember me</span>
+                    </label>
+                </div>
+
+                <div class="flex flex-col items-center justify-center w-full mt-4 space-y-4">
+                    <Link v-if="canResetPassword" :href="route('password.request')" class="text-sm hover:underline ">
+                        Forgot your password?
+                    </Link>
+
+                    <BreezeButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        Log in
+                    </BreezeButton>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </template>
 
 <script>

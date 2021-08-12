@@ -37,6 +37,16 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
             ],
+            'images' => [
+                'artboard' => asset('/images/artboard.png'),
+                'brokenPhone' => asset('images/broken-iphone.png'),
+                'google' => asset('images/google.png'),
+                'mobile' => asset('images/mobile.png'),
+                'laptop' => asset('images/laptop.png'),
+                'desktop' => asset('images/desktop.png'),
+                'loading' => asset('images/loading.svg'),
+                'checkmark' => asset('images/checkmark.png')
+            ]
         ]);
     }
 }

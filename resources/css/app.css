@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.responsive-container {
+  @apply px-6 mx-auto max-w-7xl sm:px-10 lg:px-12;
+}
+
+.button {
+  @apply px-12 text-sm;
+}
+
+.button-primary {
+  @apply py-3 hover:shadow-xl;
+}
+
+.active {
+  @apply border-b-4 border-primary;
+}

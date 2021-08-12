@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -15,14 +15,16 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
-});
+Route::get('/', [HomeController::class, 'index'])->name('index');
+
+Route::get('/fix-my-device', [HomeController::class, 'fixMyDevice'])->name('fix-my-device');
+Route::post('/fix-my-device', [HomeController::class, 'fixDevice']);
+
+Route::get('/track-device', [HomeController::class, 'trackDevice'])->name('track-device');
+Route::post('/track-device', [HomeController::class, 'findDevice']);
+
+Route::get('/services', [HomeController::class, 'services'])->name('services');
+Route::get('/help', [HomeController::class, 'help'])->name('help');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

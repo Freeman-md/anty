@@ -13,6 +13,24 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            backgroundColor: {
+                'primary': '#2D6DDD',
+                'light': '#FBFDFE'
+            },
+            borderColor: {
+                'primary': '#2D6DDD',
+                'light': '#FBFDFE'
+            },
+            textColor: {
+                'primary': '#2D6DDD',
+                'light': '#FBFDFE'
+            },
+            rotate: {
+                '270': '270deg',
+                '360': '360deg',
+                '-270': '-270deg',
+                '-360': '-360deg',
+            }
         },
     },
 
