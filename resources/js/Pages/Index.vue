@@ -10,15 +10,15 @@
                 <p>Get a quote and have our delivery person come to pick up your device</p>
             </div>
 
-            <div class="flex items-center space-x-8">
-                <Link :href="route('fix-my-device')" class="text-white transition duration-200 button-primary button bg-primary rounded-3xl">Fix My Device</Link>
-                <button disabled class="box-border transition duration-200 hover:bg-primary hover:text-white hover:border-0 hover:border-transparent border-2 py-2.5 border-primary text-primary button rounded-3xl">Get A Quote</button>
+            <div class="flex flex-col items-start space-y-2 md:space-y-0 md:space-x-8 md:flex-row md:items-center">
+                <Link :href="route('fix-my-device')" class="text-center text-white transition duration-200 button-primary button bg-primary rounded-3xl">Fix My Device</Link>
+                <Link :href="route('track-device')" class="box-border transition duration-200 hover:bg-primary hover:text-white hover:border-0 hover:border-transparent border-2 py-2.5 border-primary text-primary button rounded-3xl text-center">Track Device</Link>
             </div>
         </div>
 
         <!-- Image -->
-        <div class="flex items-center justify-center w-full -mt-10">
-            <img :src="$page.props.images.brokenPhone" class="object-cover object-center h-96 w-96 grayscale-0" />
+        <div class="items-center justify-center hidden w-full -mt-10 sm:flex">
+            <img :src="$page.props.images.brokenPhone" class="object-cover object-center sm:w-80 sm:h-80 w-72 h-72 md:h-96 md:w-96 grayscale-0" />
         </div>
 
     </div>

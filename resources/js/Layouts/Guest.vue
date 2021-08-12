@@ -1,7 +1,7 @@
 <template>
     <Header />
     
-    <div class="py-8 mt-24">
+    <div class="px-4 py-8 mt-24">
         <slot />
     </div>
 </template>

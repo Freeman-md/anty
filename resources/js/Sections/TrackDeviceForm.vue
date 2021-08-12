@@ -6,9 +6,9 @@
 
           <BreezeValidationErrors class="mb-4" />
 
-          <form @submit.prevent="submit" class="flex flex-col w-1/2 space-y-12">
+          <form @submit.prevent="submit" class="flex flex-col space-y-12 sm:w-1/2">
               <div class="flex flex-col items-center justify-center space-y-2">
-                  <BreezeLabel for="email" value="Order I.D" />
+                  <BreezeLabel for="email" value="Order I.D" class="font-semibold" />
                   <BreezeInput placeholder="Eg: #AC287NC25" id="email" type="text" class="block w-full mt-1" v-model="form.email" autofocus />
               </div>
               

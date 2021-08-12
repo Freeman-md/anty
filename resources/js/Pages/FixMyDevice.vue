@@ -16,9 +16,9 @@
       </div>
       
       <div v-if="!show && !loading" class="flex flex-col items-center justify-center space-y-4">
-        <div class="flex items-center justify-center space-x-6">
-          <img :src="$page.props.images.checkmark" class="object-cover w-80 h-80" />
-          <div class="flex flex-col items-center justify-center w-1/2 space-y-2 text-lg font-semibold">
+        <div class="flex flex-col items-center justify-center space-y-6 sm:space-y-0 sm:space-x-6 sm:flex-row">
+          <img :src="$page.props.images.checkmark" class="object-cover w-60 h-60 sm:w-80 sm:h-80" />
+          <div class="flex flex-col items-center justify-center space-y-2 text-lg font-semibold text-center sm:w-1/2">
             <span>Your Order ID is <span class="font-black">{{ orderId }}.</span></span>
             <span>Please do not lose this ID.</span>
             <span class="text-center">This is how you will be able to log in and check your order's status and updates.</span>

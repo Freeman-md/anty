@@ -2,7 +2,7 @@
   <div class="flex flex-col items-center justify-center space-y-6">
     <h1 class="text-4xl font-bold text-center text-primary">Brands</h1>
 
-    <div class="grid grid-cols-3 gap-12">
+    <div class="grid gap-y-4 sm:gap-12 sm:grid-cols-3">
       <div
         v-for="(brandItem, index) in brands"
         :key="index"
@@ -17,7 +17,7 @@
     <div class="flex flex-col items-center space-y-2">
       <span class="text-base font-semibold" @click.prevent="changeBrand('Other')">Other...</span>
       <transition name="input">
-        <BreezeInput v-if="brand === 'other'" type="text" class="block w-full mt-1" v-model="customBrand" placeholder="Enter your device brand"/>
+        <BreezeInput v-if="brand.toLowerCase() === 'other'" type="text" class="block w-full mt-1" v-model="customBrand" placeholder="Enter your device brand"/>
       </transition>
     </div>
 

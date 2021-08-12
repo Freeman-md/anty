@@ -4,7 +4,7 @@
 
     <span class="my-4 text-base font-bold">Select Your Device</span>
 
-    <div class="grid grid-cols-3 gap-12">
+    <div class="grid gap-y-4 sm:gap-12 sm:grid-cols-3">
       
       <div
         v-for="(deviceItem, index) in devices"

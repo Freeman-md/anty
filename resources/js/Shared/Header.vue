@@ -6,8 +6,8 @@
       <Link :href="route('index')" class="font-serif text-4xl font-semibold uppercase text-primary ">Anty</Link>
 
       <!-- Navigation Links -->
-      <div class="flex items-center justify-between space-x-10 text-xs font-bold sm:text-sm sm:space-x-14 lg:space-x-20">
-        <div id="left" class="flex items-center justify-between space-x-6 lg:space-x-10">
+      <div class="items-center justify-between hidden space-x-10 text-xs font-bold sm:flex sm:text-sm sm:space-x-14 lg:space-x-20">
+        <div id="left" class="flex items-center justify-between space-x-4 sm:space-x-6 lg:space-x-10">
           <Link 
             v-for="(link, index) in links"
             :key="index"
@@ -17,12 +17,18 @@
             {{ link.text }}
           </Link>
         </div>
-        <div id="right" class="flex items-center justify-between space-x-6 lg:space-x-10">
+        <div id="right" class="flex items-center justify-between space-x-4 sm:space-x-6 lg:space-x-10" v-if="!$page.props.auth.user">
           <Link :href="route('login')" :class="{'active': $page.url === '/login'}">
             Log In
           </Link>
           <Link :href="route('register')" :class="{'active': $page.url === '/register'}">
             Sign Up
+          </Link>
+        </div>
+        <div id="right" class="flex items-center justify-between space-x-4 sm:space-x-6 lg:space-x-10" v-else>
+          <span class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">Welcome, {{$page.props.auth.user.email}}</span>
+          <Link :href="route('logout')">
+            Sign Out
           </Link>
         </div>
       </div>

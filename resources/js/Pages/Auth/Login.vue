@@ -2,11 +2,11 @@
     <Head title="Log in" />
 
     <div class="flex flex-col items-center justify-center w-full">
-        <div class="flex flex-col items-center justify-center w-1/2 space-y-4">
+        <div class="flex flex-col items-center justify-center w-full space-y-4 sm:w-2/3 lg:w-1/2">
 
             <h1 class="text-4xl font-bold text-center text-primary">Log In</h1>
 
-            <Link class="flex items-center justify-center w-1/2 px-6 py-2 space-x-6 text-sm font-semibold text-black shadow-xl bg-light rounded-2xl">
+            <Link class="flex items-center justify-center w-full px-6 py-2 space-x-6 text-sm font-semibold text-black shadow-xl sm:w-2/3 lg:w-1/2 bg-light rounded-2xl">
                 <img :src="$page.props.images.google" class="object-cover w-8 h-8" />
                 <span>Sign in with Google</span>
             </Link>
@@ -19,7 +19,7 @@
                 {{ status }}
             </div>
 
-            <form @submit.prevent="submit" class="flex flex-col w-1/2 space-y-4">
+            <form @submit.prevent="submit" class="flex flex-col w-full space-y-4 sm:w-2/3 lg:w-1/2">
                 <div class="flex flex-col items-center justify-center">
                     <BreezeLabel for="email" value="Email Address" />
                     <BreezeInput id="email" type="text" class="block w-full mt-1" v-model="form.email" autofocus />

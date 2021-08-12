@@ -1,30 +1,39 @@
 <template>
     <Head title="Reset Password" />
 
-    <BreezeValidationErrors class="mb-4" />
+    <div class="flex flex-col items-center justify-center w-full">
+        <div class="flex flex-col items-center justify-center w-full space-y-4 sm:w-2/3 lg:w-1/2">
 
-    <form @submit.prevent="submit">
-        <div>
-            <BreezeLabel for="email" value="Email" />
-            <BreezeInput id="email" type="email" class="mt-1 block w-full" v-model="form.email" required autofocus autocomplete="username" />
-        </div>
+            <h1 class="text-4xl font-bold text-center text-primary">Reset Password</h1>
 
-        <div class="mt-4">
-            <BreezeLabel for="password" value="Password" />
-            <BreezeInput id="password" type="password" class="mt-1 block w-full" v-model="form.password" required autocomplete="new-password" />
-        </div>
+            <BreezeValidationErrors class="mb-4" />
 
-        <div class="mt-4">
-            <BreezeLabel for="password_confirmation" value="Confirm Password" />
-            <BreezeInput id="password_confirmation" type="password" class="mt-1 block w-full" v-model="form.password_confirmation" required autocomplete="new-password" />
-        </div>
+            <form @submit.prevent="submit" class="flex flex-col w-full space-y-4 sm:w-2/3 lg:w-1/2">
+                <div>
+                    <BreezeLabel for="email" value="Email" />
+                    <BreezeInput id="email" type="email" class="block w-full mt-1" v-model="form.email" autofocus />
+                </div>
 
-        <div class="flex items-center justify-end mt-4">
-            <BreezeButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
-                Reset Password
-            </BreezeButton>
+                <div class="mt-4">
+                    <BreezeLabel for="password" value="Password" />
+                    <BreezeInput id="password" type="password" class="block w-full mt-1" v-model="form.password" />
+                </div>
+
+                <div class="mt-4">
+                    <BreezeLabel for="password_confirmation" value="Confirm Password" />
+                    <BreezeInput id="password_confirmation" type="password" class="block w-full mt-1" v-model="form.password_confirmation"/>
+                </div>
+
+                <div class="flex items-center justify-end mt-4">
+                    <BreezeButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        Reset Password
+                    </BreezeButton>
+                </div>
+            </form>
+
         </div>
-    </form>
+    </div>
+    
 </template>
 
 <script>

@@ -4,7 +4,7 @@
 
     <div class="flex flex-col items-center justify-center space-y-4">
       
-      <div class="grid grid-cols-2 gap-12">
+      <div class="grid gap-y-6 sm:gap-12 sm:grid-cols-2">
         
         <!-- Available Issues -->
         <div class="flex flex-col items-start space-y-2 text-lg">
@@ -13,7 +13,7 @@
             <span class="flex flex-grow text-center">{{ issue || `What's the problem?` }}</span>
             <span class="fas fa-chevron-down"></span>
             <transition name="dropdown">
-              <div class="absolute top-0 left-0 z-40 flex flex-col items-start w-48 px-4 py-3 mt-10 -ml-12 space-y-2 text-sm font-semibold text-gray-800 origin-bottom-left bg-white rounded-md shadow-md" v-if="showDropdown">
+              <div class="absolute top-0 left-0 z-40 flex flex-col items-start w-48 px-4 py-3 mt-12 -ml-12 space-y-2 text-sm font-semibold text-gray-800 origin-bottom-left bg-white rounded-md shadow-md sm:mt-10" v-if="showDropdown">
               <span 
                 class="transition duration-200 cursor-pointer hover:text-black"
                 v-for="(issueItem, index) in issues"
@@ -31,8 +31,8 @@
         <!-- Custom Issues -->
         <div v-show="issue.toLowerCase() === 'other'" class="flex flex-col items-start space-y-2 text-lg">
           <span>If 'Other' please fill in the fault below</span>
-          <transition>
-            <textarea v-model="customIssue" class="py-3 text-black border-0 shadow-xl resize-none rounded-2xl bg-light focus:ring-0" rows="4"></textarea>
+          <transition class="w-full" name="textarea">
+            <textarea v-model="customIssue" class="w-full py-3 text-black border-0 shadow-xl resize-none rounded-2xl bg-light focus:ring-0" rows="4"></textarea>
           </transition>
         </div>
         

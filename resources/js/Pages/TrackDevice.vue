@@ -1,7 +1,7 @@
 <template>
     <Head title="Track Device" />
     
-    <TrackDeviceForm v-if="bids.length <= 0" @foundDevice="getDeviceBids" />
+    <TrackDeviceForm v-if="bids.length >= 0" @foundDevice="getDeviceBids" />
 
     <DeviceBids v-else :bids="bids" :orderId="orderId"  />
     
@@ -27,6 +27,7 @@ export default {
     setup() {
         const orderId = ref('')
         const bids = reactive([{name: 'Mr. Kenneth', rating: '4', price: '30'}])
+        
         const getDeviceBids = (gottenBids, id) => {
             bids = gottenBids
             orderId = id

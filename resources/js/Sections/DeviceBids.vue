@@ -3,7 +3,7 @@
     <h1 class="text-4xl font-bold text-center text-primary">Your Dashboard ({{ orderId }})</h1>
     <div class="flex flex-col items-start w-full space-y-5">
       <span class="text-2xl font-bold">Bids</span>
-      <table class="items-center w-2/3 text-lg bg-transparent">
+      <table class="items-center w-full text-lg bg-transparent sm:w-2/3">
         <thead>
           <tr class="border-b-2 border-black">
             <th :class="theadClasses">

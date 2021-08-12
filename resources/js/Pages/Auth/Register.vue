@@ -21,6 +21,10 @@
             </Link>
 
             <span class="my-4 text-base font-bold lowercase">Or</span>
+            
+            <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
+                {{ status }}
+            </div>
 
             <BreezeValidationErrors class="mb-4" />
 
@@ -59,7 +63,9 @@ import { Head, Link } from '@inertiajs/inertia-vue3';
 export default {
     layout: BreezeGuestLayout,
 
-    props: ['status'],
+    props: {
+        status: String
+    },
 
     components: {
         BreezeButton,
