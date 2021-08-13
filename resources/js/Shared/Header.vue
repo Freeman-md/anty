@@ -25,10 +25,10 @@
             Sign Up
           </Link>
         </div>
-        <div id="right" class="flex items-center justify-between space-x-4 sm:space-x-6 lg:space-x-10" v-else>
-          <span class="inline-flex items-center px-1 pt-1 text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-b-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300">Welcome, {{$page.props.auth.user.email}}</span>
-          <Link :href="route('logout')">
-            Sign Out
+        <div id="right" class="flex items-center justify-between space-x-4 text-sm sm:space-x-6 lg:space-x-10" v-else>
+          <span class="px-1 pt-1 font-medium leading-5 transition duration-150 ease-in-out">Welcome, {{$page.props.auth.user.email}}</span>
+          <Link :href="route('logout')" method="post" as="button">
+            Logout
           </Link>
         </div>
       </div>

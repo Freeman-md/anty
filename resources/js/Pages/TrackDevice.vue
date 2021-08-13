@@ -1,14 +1,14 @@
 <template>
     <Head title="Track Device" />
     
-    <TrackDeviceForm v-if="bids.length >= 0" @foundDevice="getDeviceBids" />
+    <TrackDeviceForm v-if="!found" />
 
-    <DeviceBids v-else :bids="bids" :orderId="orderId"  />
+    <DeviceBids v-else :bids="bids" :orderNumber="orderNumber"  />
     
 </template>
 
 <script>
-import { reactive, ref } from 'vue'
+import { computed } from 'vue'
 import { Head, Link } from '@inertiajs/inertia-vue3'
 import BreezeGuestLayout from '@/Layouts/Guest.vue'
 import TrackDeviceForm from '@/Sections/TrackDeviceForm.vue'
@@ -16,6 +16,21 @@ import DeviceBids from '@/Sections/DeviceBids.vue'
 
 export default {
     layout: BreezeGuestLayout,
+
+    props: {
+        orderNumber: {
+            required: false,
+            default: ''
+        },
+        bids: {
+            required: false,
+            default: []
+        },
+        found: {
+            required: false,
+            default: false,
+        }
+    },
     
     components: {
       Head,
@@ -24,17 +39,12 @@ export default {
       DeviceBids
     },
 
-    setup() {
-        const orderId = ref('')
-        const bids = reactive([{name: 'Mr. Kenneth', rating: '4', price: '30'}])
-        
-        const getDeviceBids = (gottenBids, id) => {
-            bids = gottenBids
-            orderId = id
-        }
+    setup(props) {
+        const orderNumber = computed(() => props.orderNumber)
+        const bids = computed(() => props.bids)
 
         return {
-            bids, getDeviceBids, orderId
+            bids, orderNumber
         }
     }
 }

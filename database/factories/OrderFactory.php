@@ -23,7 +23,7 @@ class OrderFactory extends Factory
     public function definition()
     {
         return [
-            'order_number' => Str::random(8)
+            'order_number' => "#".Str::random(8)
         ];
     }
 }

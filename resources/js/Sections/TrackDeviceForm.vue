@@ -9,7 +9,7 @@
           <form @submit.prevent="submit" class="flex flex-col space-y-12 sm:w-1/2">
               <div class="flex flex-col items-center justify-center space-y-2">
                   <BreezeLabel for="email" value="Order I.D" class="font-semibold" />
-                  <BreezeInput placeholder="Eg: #AC287NC25" id="email" type="text" class="block w-full mt-1" v-model="form.email" autofocus />
+                  <BreezeInput placeholder="Eg: #AC287NC25" id="email" type="text" class="block w-full mt-1" autofocus v-model="form.orderNumber"/>
               </div>
               
               <BreezeButton :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
@@ -35,7 +35,7 @@ export default {
   data() {
       return {
           form: this.$inertia.form({
-              id: '',
+              orderNumber: '',
           })
       }
   },
@@ -43,7 +43,7 @@ export default {
   methods: {
       submit() {
           this.form.post(this.route('track-device'), {
-              onFinish: (data) => console.log(data),
+              onFinish: () => this.form.reset('orderNumber'),
           })
       }
   }

@@ -19,7 +19,6 @@ class CreateProblemsTable extends Migration
             $table->enum('device', ['Mobile', 'Laptop', 'Desktop']);
             $table->string('brand');
             $table->string('fault');
-            $table->string('description')->nullable();
             $table->timestamps();
         });
     }

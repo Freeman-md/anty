@@ -11,7 +11,7 @@ class Problem extends Model
 
     protected $table = 'problems';
 
-    protected $fillable = ['order_id', 'device', 'brand', 'fault', 'description'];
+    protected $fillable = ['order_id', 'device', 'brand', 'fault'];
 
     public function order() {
         return $this->belongsTo(Order::class);

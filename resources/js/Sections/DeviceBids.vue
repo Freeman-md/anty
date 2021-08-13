@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col items-start space-y-10 responsive-container">
-    <h1 class="text-4xl font-bold text-center text-primary">Your Dashboard ({{ orderId }})</h1>
+    <h1 class="text-4xl font-bold text-center text-primary">Your Dashboard ({{ orderNumber }})</h1>
     <div class="flex flex-col items-start w-full space-y-5">
       <span class="text-2xl font-bold">Bids</span>
       <table class="items-center w-full text-lg bg-transparent sm:w-2/3">
@@ -13,11 +13,11 @@
               Rating
             </th>
             <th :class="theadClasses">
-              Price
+              Price ($)
             </th>
-            <th :class="theadClasses">
+            <!-- <th :class="theadClasses">
               
-            </th>
+            </th> -->
           </tr>
         </thead>
         <tbody>
@@ -30,25 +30,17 @@
                 {{ bid.name }}
               </td>
               <td :class="tbodyClasses">
-                {{ bid.rating }}
+                <span class="text-primary" :class="[index + 1 <= bid.rating ? 'fas fa-star' : 'far fa-star' ]" v-for="(n, index) in 5" :key="index"></span>
               </td>
               <td :class="tbodyClasses">
                 {{ bid.price }}
               </td>
-              <td :class="tbodyClasses" class="relative">
-                <span class="cursor-pointer fas fa-ellipsis-v" @click.prevent="toggleDropdown"></span>
-                <transition name="dropdown">
-                  <div class="absolute left-0 z-40 flex flex-col items-start w-32 px-4 py-3 ml-4 -mt-8 space-y-2 text-sm font-semibold text-gray-800 origin-top-left bg-white rounded-md shadow-md" v-if="showDropdown">
-                  <span class="transition duration-200 cursor-pointer hover:text-black">
-                    Accept
-                  </span>
-                  <span class="transition duration-200 cursor-pointer hover:text-black">
-                    Reject
-                  </span>
-                  </div>
-                </transition>
+              <td class="flex items-center justify-start p-4 px-1 space-x-2 font-normal align-middle whitespace-nowrap">
+                <span class="text-green-500 cursor-pointer fas fa-check"></span>
+                <span class="text-red-500 cursor-pointer fa fa-times"></span>
               </td>
           </tr>
+          <span v-show="bids.length <= 0" class="p-4 px-1 font-normal align-middle whitespace-nowrap">Bids not available</span>
         </tbody>
       </table>
     </div>
@@ -58,7 +50,7 @@
 <script>
 import { ref } from 'vue'
 export default {
-  props: ['bids', 'orderId'],
+  props: ['bids', 'orderNumber'],
   setup() {
     const showDropdown = ref(false)
     const theadClasses = ref('px-1 py-3 font-semibold tracking-wider text-left align-middle whitespace-nowrap')

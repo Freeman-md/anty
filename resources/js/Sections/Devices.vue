@@ -41,7 +41,7 @@ export default {
     }
     
     const deviceSelected = () => {
-      emit('deviceSelected', device.value.toLowerCase())
+      emit('deviceSelected', device.value)
     }
 
     return {

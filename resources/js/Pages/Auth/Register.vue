@@ -1,13 +1,13 @@
 <template>
     <Head title="Sign Up" />
 
-    <div class="flex items-center justify-center w-full space-x-6">
+    <div class="flex items-center justify-center w-full md:space-x-6">
         <!-- Image -->
-        <div class="-mt-20">
+        <div class="hidden -mt-20 md:block">
             <img :src="$page.props.images.artboard" class="object-cover" />
         </div>
         <!-- Content -->
-        <div class="flex flex-col items-center w-1/2 space-y-4">
+        <div class="flex flex-col items-center space-y-4 sm:w-1/2">
 
             <div>
                 <h1 class="text-4xl font-bold text-primary">Sign Up</h1>
@@ -15,7 +15,7 @@
 
             <span class="text-sm font-semibold">Already have an account? <Link :href="route('login')" class="text-primary">Sign In</Link></span>
 
-            <Link class="flex items-center justify-center w-1/2 px-6 py-2 space-x-6 text-sm font-semibold text-black shadow-xl bg-light rounded-2xl">
+            <Link class="flex items-center justify-center w-full px-6 py-2 space-x-6 text-sm font-semibold text-black shadow-xl lg:w-2/3 xl:w-1/2 bg-light rounded-2xl">
                 <img :src="$page.props.images.google" class="object-cover w-8 h-8" />
                 <span>Sign up with Google</span>
             </Link>
@@ -28,7 +28,7 @@
 
             <BreezeValidationErrors class="mb-4" />
 
-            <form @submit.prevent="submit" class="flex flex-col w-1/2 space-y-4">
+            <form @submit.prevent="submit" class="flex flex-col w-full space-y-4 lg:w-2/3 xl:w-1/2">
                 <div class="flex flex-col">
                     <BreezeLabel for="email" value="Email Address" />
                     <BreezeInput id="email" type="text" class="block w-full mt-1" v-model="form.email" autofocus />

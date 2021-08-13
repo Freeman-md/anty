@@ -19,7 +19,7 @@
         <div class="flex flex-col items-center justify-center space-y-6 sm:space-y-0 sm:space-x-6 sm:flex-row">
           <img :src="$page.props.images.checkmark" class="object-cover w-60 h-60 sm:w-80 sm:h-80" />
           <div class="flex flex-col items-center justify-center space-y-2 text-lg font-semibold text-center sm:w-1/2">
-            <span>Your Order ID is <span class="font-black">{{ orderId }}.</span></span>
+            <span>Your Order ID is <span class="font-black">{{ orderNumber }}.</span></span>
             <span>Please do not lose this ID.</span>
             <span class="text-center">This is how you will be able to log in and check your order's status and updates.</span>
           </div>
@@ -37,7 +37,8 @@
 </template>
 
 <script>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
+import { Inertia } from '@inertiajs/inertia'
 import { Head, Link } from '@inertiajs/inertia-vue3'
 import BreezeGuestLayout from '@/Layouts/Guest.vue'
 import Devices from '@/Sections/Devices.vue'
@@ -45,6 +46,12 @@ import Brands from '@/Sections/Brands.vue'
 import Issues from '@/Sections/Issues.vue'
 export default {
   layout: BreezeGuestLayout,
+  props: {
+    orderNumber: {
+      required: false,
+      default: ''
+    }
+  },
   components: {
     Head,
     Link,
@@ -52,16 +59,22 @@ export default {
     Brands,
     Issues,
   },
-  setup() {
+  setup(props) {
     const show = ref('devices')
     const device = ref('')
     const brand = ref('')
     const issue = ref('')
     const loading = ref(false)
     const orderId = ref('')
+
+    onMounted(() => {
+      if (props.orderNumber) {
+        show.value = ''
+      }
+    })
     
     const setDevice = (selectedDevice) => {
-      device.value = selectedDevice
+      device.value = selectedDevice.toLowerCase()
       show.value = 'brands'
     }
 
@@ -80,9 +93,19 @@ export default {
       loading.value = value
     }
 
-    const fixMyDevice = async() => {
+    const fixMyDevice = async function() {
       isLoading(true)
-      setTimeout(() => {isLoading(false); orderId.value = '#A5DG62HD'}, 5000)
+      Inertia.post('/fix-my-device', 
+      {
+        'device': device.value, 
+        'brand': brand.value, 
+        'issue': issue.value
+      }, 
+      {
+        onFinish: () => {
+          if(props.orderNumber) isLoading(false)
+        }
+      })
     }
 
     return {

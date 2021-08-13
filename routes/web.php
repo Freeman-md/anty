@@ -26,8 +26,4 @@ Route::post('/track-device', [HomeController::class, 'findDevice']);
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/help', [HomeController::class, 'help'])->name('help');
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
 require __DIR__.'/auth.php';

@@ -66,7 +66,7 @@ export default {
     }
 
     const brandSelected = () => {
-      emit('brandSelected', brand.value.toLowerCase())
+      emit('brandSelected', brand.value)
     }
 
     return {

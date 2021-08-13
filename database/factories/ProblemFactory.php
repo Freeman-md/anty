@@ -31,7 +31,6 @@ class ProblemFactory extends Factory
             'device' => $device,
             'brand' => $brand,
             'fault' => $fault,
-            'description' => $fault == 'Other' ? $this->faker->sentence(10) : ''
         ];
     }
 }
