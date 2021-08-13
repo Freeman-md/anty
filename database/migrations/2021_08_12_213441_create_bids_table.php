@@ -19,6 +19,7 @@ class CreateBidsTable extends Migration
             $table->string('name');
             $table->decimal('price')->default(0);
             $table->integer('rating')->default(0);
+            $table->enum('status', ['Accepted', 'Rejected'])->nullable();
             $table->timestamps();
         });
     }

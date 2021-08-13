@@ -11,7 +11,7 @@ class Bid extends Model
 
     protected $table = 'bids';
 
-    protected $fillable = ['problem_id', 'name', 'price', 'rating'];
+    protected $fillable = ['problem_id', 'name', 'price', 'rating', 'status'];
 
     public function problem() {
         return $this->belongsTo(Problem::class);

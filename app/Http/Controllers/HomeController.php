@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bid;
 use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -18,7 +19,11 @@ class HomeController extends Controller
     }
 
     public function fixDevice(Request $request) {
-        $fields = $request->all();
+        $fields = $request->validate([
+            'device' => 'required',
+            'brand' => 'required',
+            'issue' => 'required'
+        ]);
 
         $order = Order::create([
             'order_number' => "#". Str::random(8)
@@ -33,10 +38,6 @@ class HomeController extends Controller
         return Inertia::render('FixMyDevice', [
             'orderNumber' => $order->order_number,
         ]);
-    }
-
-    public function services() {
-        
     }
 
     public function trackDevice() {
@@ -55,6 +56,50 @@ class HomeController extends Controller
             'found' => true,
             'bids' => $bids
         ]);
+    }
+
+    public function acceptBid(Request $request) {
+        $fields = $request->validate([
+            'bid_id' => 'required'
+        ]);
+
+        $bid = Bid::find($fields['bid_id']);
+        $bid->update([
+            'status' => 'Accepted'
+        ]);
+
+        $bids = $bid->problem->bids()->latest()->get();
+        $orderNumber = $bid->problem->order->order_number;
+
+        return Inertia::render('TrackDevice', [
+            'orderNumber' => $orderNumber,
+            'found' => true,
+            'bids' => $bids
+        ]);
+    }
+
+    public function rejectBid(Request $request) {
+        $fields = $request->validate([
+            'bid_id' => 'required'
+        ]);
+
+        $bid = Bid::find($fields['bid_id']);
+        $bid->update([
+            'status' => 'Rejected'
+        ]);
+
+        $bids = $bid->problem->bids()->latest()->get();
+        $orderNumber = $bid->problem->order->order_number;
+
+        return Inertia::render('TrackDevice', [
+            'orderNumber' => $orderNumber,
+            'found' => true,
+            'bids' => $bids
+        ]);
+    }
+
+    public function services() {
+        
     }
 
     public function help() {

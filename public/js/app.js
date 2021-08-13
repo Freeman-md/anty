@@ -19800,7 +19800,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 isLoading(true);
-                _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post('/fix-my-device', {
+                _context.next = 3;
+                return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post('/fix-my-device', {
                   'device': device.value,
                   'brand': brand.value,
                   'issue': issue.value
@@ -19810,7 +19811,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   }
                 });
 
-              case 2:
+              case 3:
               case "end":
                 return _context.stop();
             }
@@ -19999,24 +20000,84 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: ['bids', 'orderNumber'],
   setup: function setup() {
-    var showDropdown = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)(false);
-    var theadClasses = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('px-1 py-3 font-semibold tracking-wider text-left align-middle whitespace-nowrap');
-    var tbodyClasses = (0,vue__WEBPACK_IMPORTED_MODULE_0__.ref)('p-4 px-1 font-normal align-middle whitespace-nowrap');
+    var showDropdown = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)(false);
+    var theadClasses = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('px-1 py-3 font-semibold tracking-wider text-left align-middle whitespace-nowrap');
+    var tbodyClasses = (0,vue__WEBPACK_IMPORTED_MODULE_1__.ref)('p-4 px-1 font-normal align-middle whitespace-nowrap');
 
     var toggleDropdown = function toggleDropdown() {
       showDropdown.value = !showDropdown.value;
     };
 
+    var acceptBid = /*#__PURE__*/function () {
+      var _ref = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee(id) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post('/track-device/accept-bid', {
+                  'bid_id': id
+                });
+
+              case 2:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee);
+      }));
+
+      return function acceptBid(_x) {
+        return _ref.apply(this, arguments);
+      };
+    }();
+
+    var rejectBid = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().mark(function _callee2(id) {
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default().wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_2__.Inertia.post('/track-device/reject-bid', {
+                  'bid_id': id
+                });
+
+              case 2:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2);
+      }));
+
+      return function rejectBid(_x2) {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+
     return {
       showDropdown: showDropdown,
       theadClasses: theadClasses,
       tbodyClasses: tbodyClasses,
-      toggleDropdown: toggleDropdown
+      toggleDropdown: toggleDropdown,
+      acceptBid: acceptBid,
+      rejectBid: rejectBid
     };
   }
 });
@@ -22061,18 +22122,20 @@ var _hoisted_5 = {
 var _hoisted_6 = {
   "class": "border-b-2 border-black"
 };
-
-var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", {
-  "class": "flex items-center justify-start p-4 px-1 space-x-2 font-normal align-middle whitespace-nowrap"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-green-500 cursor-pointer fas fa-check"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
-  "class": "text-red-500 cursor-pointer fa fa-times"
-})], -1
-/* HOISTED */
-);
-
+var _hoisted_7 = {
+  "class": "p-4 px-1 font-normal align-middle whitespace-nowrap"
+};
 var _hoisted_8 = {
+  key: 0,
+  "class": "items-center justify-start space-x-2 "
+};
+var _hoisted_9 = ["onClick"];
+var _hoisted_10 = ["onClick"];
+var _hoisted_11 = {
+  key: 1,
+  "class": "text-base font-semibold"
+};
+var _hoisted_12 = {
   "class": "p-4 px-1 font-normal align-middle whitespace-nowrap"
 };
 
@@ -22118,10 +22181,26 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
       "class": (0,vue__WEBPACK_IMPORTED_MODULE_0__.normalizeClass)($setup.tbodyClasses)
     }, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bid.price), 3
     /* TEXT, CLASS */
-    ), _hoisted_7]);
+    ), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("td", _hoisted_7, [!bid.status ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+      "class": "text-green-500 cursor-pointer fas fa-check",
+      onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+        return $setup.acceptBid(bid.id);
+      }, ["prevent"])
+    }, null, 8
+    /* PROPS */
+    , _hoisted_9), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+      "class": "text-red-500 cursor-pointer fa fa-times",
+      onClick: (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function ($event) {
+        return $setup.rejectBid(bid.id);
+      }, ["prevent"])
+    }, null, 8
+    /* PROPS */
+    , _hoisted_10)])) : ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("span", _hoisted_11, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)(bid.status), 1
+    /* TEXT */
+    ))])]);
   }), 128
   /* KEYED_FRAGMENT */
-  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_8, "Bids not available", 512
+  )), (0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_12, "Bids not available", 512
   /* NEED_PATCH */
   ), [[vue__WEBPACK_IMPORTED_MODULE_0__.vShow, $props.bids.length <= 0]])])])])]);
 }

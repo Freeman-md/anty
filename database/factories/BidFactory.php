@@ -24,7 +24,7 @@ class BidFactory extends Factory
         return [
             'name' => $this->faker->userName(),
             'price' => $this->faker->numberBetween(100, 10000),
-            'rating' => $this->faker->numberBetween(0, 5)
+            'rating' => $this->faker->numberBetween(0, 5),
         ];
     }
 }

@@ -35,9 +35,12 @@
               <td :class="tbodyClasses">
                 {{ bid.price }}
               </td>
-              <td class="flex items-center justify-start p-4 px-1 space-x-2 font-normal align-middle whitespace-nowrap">
-                <span class="text-green-500 cursor-pointer fas fa-check"></span>
-                <span class="text-red-500 cursor-pointer fa fa-times"></span>
+              <td class="p-4 px-1 font-normal align-middle whitespace-nowrap">
+                <div class="items-center justify-start space-x-2 " v-if="!bid.status">
+                  <span class="text-green-500 cursor-pointer fas fa-check" @click.prevent="acceptBid(bid.id)"></span>
+                  <span class="text-red-500 cursor-pointer fa fa-times" @click.prevent="rejectBid(bid.id)"></span>
+                </div>
+                <span v-else class="text-base font-semibold">{{ bid.status }}</span>
               </td>
           </tr>
           <span v-show="bids.length <= 0" class="p-4 px-1 font-normal align-middle whitespace-nowrap">Bids not available</span>
@@ -49,6 +52,7 @@
 
 <script>
 import { ref } from 'vue'
+import { Inertia } from '@inertiajs/inertia'
 export default {
   props: ['bids', 'orderNumber'],
   setup() {
@@ -60,8 +64,22 @@ export default {
       showDropdown.value = !showDropdown.value
     }
 
+    const acceptBid = async function(id) {
+      await Inertia.post('/track-device/accept-bid', 
+      {
+        'bid_id': id,
+      })
+    }
+
+    const rejectBid = async function(id) {
+      await Inertia.post('/track-device/reject-bid', 
+      {
+        'bid_id': id,
+      })
+    }
+
     return {
-      showDropdown, theadClasses, tbodyClasses, toggleDropdown
+      showDropdown, theadClasses, tbodyClasses, toggleDropdown, acceptBid, rejectBid
     }
   }
 }

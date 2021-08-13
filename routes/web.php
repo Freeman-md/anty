@@ -22,6 +22,8 @@ Route::post('/fix-my-device', [HomeController::class, 'fixDevice']);
 
 Route::get('/track-device', [HomeController::class, 'trackDevice'])->name('track-device');
 Route::post('/track-device', [HomeController::class, 'findDevice']);
+Route::post('/track-device/accept-bid', [HomeController::class, 'acceptBid'])->name('acceptBid');
+Route::post('/track-device/reject-bid', [HomeController::class, 'rejectBid'])->name('rejectBid');
 
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/help', [HomeController::class, 'help'])->name('help');

@@ -95,7 +95,7 @@ export default {
 
     const fixMyDevice = async function() {
       isLoading(true)
-      Inertia.post('/fix-my-device', 
+      await Inertia.post('/fix-my-device', 
       {
         'device': device.value, 
         'brand': brand.value, 
