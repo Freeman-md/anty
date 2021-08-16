@@ -41,7 +41,10 @@ class HomeController extends Controller
     }
 
     public function trackDevice() {
-        return Inertia::render('TrackDevice');
+        $orderNumbers = Order::limit(5)->pluck('order_number');
+        return Inertia::render('TrackDevice', [
+            'orderNumbers' => $orderNumbers
+        ]);
     }
 
     public function findDevice(Request $request) {
@@ -99,10 +102,10 @@ class HomeController extends Controller
     }
 
     public function services() {
-        
+        return Inertia::render('Index');
     }
 
     public function help() {
-        
+        return Inertia::render('Index');
     }
 }

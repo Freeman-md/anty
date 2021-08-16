@@ -2,6 +2,13 @@
   <div class="flex flex-col items-center justify-center w-full h-full">
       <div class="flex flex-col items-center justify-center w-1/2 space-y-4">
 
+        <div class="flex flex-col items-center space-y-2" v-show="orderNumbers">
+            <span>Test Order ID's</span>
+            <ul class="list-disc">
+                <li v-for="(orderNumber, index) in orderNumbers" :key="index">{{orderNumber}}</li>
+            </ul>
+        </div>
+
           <h1 class="text-4xl font-bold text-center text-primary">Track Order</h1>
 
           <BreezeValidationErrors class="mb-4" />
@@ -26,6 +33,12 @@ import BreezeLabel from '@/Components/Label.vue'
 import BreezeButton from '@/Components/Button.vue'
 import BreezeValidationErrors from '@/Components/ValidationErrors.vue'
 export default {
+  props: {
+      orderNumbers: {
+          required: false,
+          default: []
+      }
+  },
   components: {
     BreezeValidationErrors,
     BreezeInput,

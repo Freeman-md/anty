@@ -1,7 +1,7 @@
 <template>
     <Head title="Track Device" />
     
-    <TrackDeviceForm v-if="!found" />
+    <TrackDeviceForm v-if="!found" :orderNumbers="orderNumbers" />
 
     <DeviceBids v-else :bids="bids" :orderNumber="orderNumber"  />
     
@@ -29,6 +29,10 @@ export default {
         found: {
             required: false,
             default: false,
+        },
+        orderNumbers: {
+            required: false,
+            default: []
         }
     },
     
