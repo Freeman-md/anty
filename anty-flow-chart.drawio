@@ -1,1 +1,178 @@
-<mxfile host="app.diagrams.net" modified="2022-05-08T14:22:11.099Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36" version="17.4.0" etag="Uay5kugvL0MywWJbmQJT" type="github"><diagram id="vEzVr5KpUUm11ABJT2Ur">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-05-08T14:51:03.548Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36" etag="QiL3FS2zDYtim4VQHLWZ" version="17.4.0" type="github">
+  <diagram id="vEzVr5KpUUm11ABJT2Ur" name="Page-1">
+    <mxGraphModel dx="1956" dy="646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-1" value="Start" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.start_1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="110" y="50" width="100" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-2" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="hT-R-bnr5rqq1zmkbytl-1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="135" y="190" as="sourcePoint" />
+            <mxPoint x="160" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-4" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="159.5" y="201" as="sourcePoint" />
+            <mxPoint x="160" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-11" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hT-R-bnr5rqq1zmkbytl-6">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-6" value="Made a &lt;b&gt;&quot;Fix Device&quot;&lt;/b&gt; Order" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="111" y="233" width="100" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-7" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="159.5" y="323" as="sourcePoint" />
+            <mxPoint x="160" y="352" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-8" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="323" width="29" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-12" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="277.5" as="sourcePoint" />
+            <mxPoint x="429" y="277.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-14" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="208" y="244" width="29" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-15" value="Track Device&lt;br&gt;(Enter Order Number)" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="220" y="251" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-19" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="550" y="278.5" as="sourcePoint" />
+            <mxPoint x="579" y="278.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-20" value="Accept Bid" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.decision;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="580" y="243.5" width="80" height="69" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-22" value="No" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="629" y="312.5" width="29" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-25" value="" style="endArrow=none;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="hT-R-bnr5rqq1zmkbytl-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="360" as="sourcePoint" />
+            <mxPoint x="629" y="323" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-26" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="360" as="sourcePoint" />
+            <mxPoint x="620" y="360" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-27" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="490" y="358" as="sourcePoint" />
+            <mxPoint x="490" y="310" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-28" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="hT-R-bnr5rqq1zmkbytl-20">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="660" y="283" as="sourcePoint" />
+            <mxPoint x="690" y="278" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-29" value="Make Payment" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="681" y="248" width="79" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-51" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hT-R-bnr5rqq1zmkbytl-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="80" y="170" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-55" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="hT-R-bnr5rqq1zmkbytl-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="240" y="172" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-30" value="User Arrives" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="108" y="140" width="100" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-31" value="View Order Bids" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="430" y="246.5" width="120" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-32" value="Yes" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="658" y="246.5" width="29" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-36" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="161.5" y="414" as="sourcePoint" />
+            <mxPoint x="162" y="443" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-37" value="Fix My Device" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="110" y="353" width="100" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-38" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="162.5" y="506" as="sourcePoint" />
+            <mxPoint x="163" y="535" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-40" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="162.5" y="598" as="sourcePoint" />
+            <mxPoint x="163" y="627" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-42" value="Select Type of Device" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="61" y="446" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-44" value="Select Brand of Device" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="57" y="535" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-45" value="Select Device Fault" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="50" y="630" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-46" value="Get Order Number" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="111" y="720" width="100" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-47" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="160.5" y="690" as="sourcePoint" />
+            <mxPoint x="161" y="719" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-48" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="211" y="751" as="sourcePoint" />
+            <mxPoint x="290" y="751" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-49" value="" style="endArrow=classic;html=1;rounded=0;entryX=0.358;entryY=1.065;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="hT-R-bnr5rqq1zmkbytl-15">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="290" y="751" as="sourcePoint" />
+            <mxPoint x="290" y="703" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-52" value="Log In / Sign Up" style="shape=parallelogram;html=1;strokeWidth=2;perimeter=parallelogramPerimeter;whiteSpace=wrap;rounded=1;arcSize=12;size=0.23;" vertex="1" parent="1">
+          <mxGeometry x="-100" y="140" width="200" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-57" value="View Stores" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="237" y="140" width="120" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-59" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="358" y="171" as="sourcePoint" />
+            <mxPoint x="387" y="171" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="hT-R-bnr5rqq1zmkbytl-60" value="View Store Details" style="rounded=1;whiteSpace=wrap;html=1;absoluteArcSize=1;arcSize=14;strokeWidth=2;" vertex="1" parent="1">
+          <mxGeometry x="388" y="140" width="120" height="63" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
